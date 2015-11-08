@@ -5,9 +5,9 @@ namespace MaintenanceTracker.Controllers
 	public class HomeController : Controller
 	{
 		// GET: Home
-		public string Index()
+		public ActionResult Index()
 		{
-			return "Hello, world!";
+			return File( "~/Controllers/index.html", "text/html");
 		}
 	}
 }
