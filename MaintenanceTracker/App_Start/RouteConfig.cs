@@ -4,17 +4,17 @@ using System.Web.Routing;
 namespace MaintenanceTracker
 {
 	public class RouteConfig
-    {
-        public static void RegisterRoutes(RouteCollection routes)
-        {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+	{
+		public static void RegisterRoutes(RouteCollection routes)
+		{
+			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "Default",
-                url: "",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
-        }
-    }
+			routes.MapRoute(
+				name: "Default",
+				url: "",
+				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+			);
+		}
+	}
 }
 
