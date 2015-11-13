@@ -1,0 +1,7 @@
+{
+  "name": "Maintenance-tracker-server",
+  "version": "0.0.0",
+  "dependencies": {
+    "maintenance-tracker": "~0.0.1"
+  }
+}
