@@ -1,5 +1,6 @@
 using MaintenanceTracker.EdmundsAPI;
 using Microsoft.Practices.Unity;
+using System.Configuration;
 using System.Web.Http;
 using Unity.WebApi;
 
@@ -16,7 +17,8 @@ namespace MaintenanceTracker
 			
 			// e.g. container.RegisterType<ITestService, TestService>();
 			container.RegisterType<ICarMakeRepository, CarMakeRepository>();
-			
+			container.RegisterType<CarMakeRepository>( new InjectionConstructor(ConfigurationManager.AppSettings[ "edmundsApiKey" ] ));
+
 			GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
 		}
 	}
