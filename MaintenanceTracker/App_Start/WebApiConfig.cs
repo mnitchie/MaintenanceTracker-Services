@@ -7,7 +7,7 @@ namespace MaintenanceTracker
 	{
 		public static void Register(HttpConfiguration config)
 		{
-			config.EnableCors( new EnableCorsAttribute( "*", "*", "*" ) );
+			config.EnableCors( new EnableCorsAttribute( "http://localhost:4200", "*", "*" ) );
 			// Web API configuration and services
 
 			// Web API routes
