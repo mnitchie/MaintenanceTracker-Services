@@ -1,4 +1,4 @@
-using MaintenanceTracker.EdmundsAPI;
+using EdmundsApiSDK;
 using Microsoft.Practices.Unity;
 using System.Configuration;
 using System.Web.Http;
@@ -16,8 +16,8 @@ namespace MaintenanceTracker
 			// it is NOT necessary to register your controllers
 			
 			// e.g. container.RegisterType<ITestService, TestService>();
-			container.RegisterType<ICarMakeRepository, CarMakeRepository>();
-			container.RegisterType<CarMakeRepository>( new InjectionConstructor(ConfigurationManager.AppSettings[ "edmundsApiKey" ] ));
+			container.RegisterType<IEdmunds, Edmunds>();
+			container.RegisterType<Edmunds>( new InjectionConstructor(ConfigurationManager.AppSettings[ "edmundsApiKey" ] ));
 
 			GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
 		}

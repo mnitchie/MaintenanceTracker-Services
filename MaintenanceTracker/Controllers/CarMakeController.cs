@@ -1,4 +1,4 @@
-﻿using MaintenanceTracker.EdmundsAPI;
+﻿using EdmundsApiSDK;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -8,17 +8,17 @@ namespace MaintenanceTracker.Controllers
 	public class CarMakeController : ApiController
 	{
 
-		private ICarMakeRepository _carMakeRepository;
+		private IEdmunds _edmundsRepository;
 
-		public CarMakeController(ICarMakeRepository carMakeRepository)
+		public CarMakeController(IEdmunds edmundsRepository)
 		{
-			this._carMakeRepository = carMakeRepository;
+			this._edmundsRepository = edmundsRepository;
 		}
 
 		[HttpGet]
 		public async Task<IEnumerable<Make>> GetMakes()
 		{
-			return await _carMakeRepository.GetAllMakes();
+			return await _edmundsRepository.GetAllMakes();
 		}
 	}
 }
