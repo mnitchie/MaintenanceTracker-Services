@@ -47,8 +47,8 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EdmundsApiSDK, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdmundsApiSDK.0.0.1.0\lib\net452\EdmundsApiSDK.dll</HintPath>
+    <Reference Include="EdmundsApiSDK, Version=0.1.5817.36858, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdmundsApiSDK.0.1.5817.36858\lib\net452\EdmundsApiSDK.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -166,12 +166,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CarMakeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="EdmundsAPI\EdmundsRepository.cs" />
-    <Compile Include="EdmundsAPI\CarMakesDTO.cs" />
-    <Compile Include="EdmundsAPI\IEdmundsRepository.cs" />
-    <Compile Include="EdmundsAPI\Make.cs" />
-    <Compile Include="EdmundsAPI\Model.cs" />
-    <Compile Include="EdmundsAPI\Year.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

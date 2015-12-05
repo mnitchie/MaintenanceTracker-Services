@@ -18,7 +18,7 @@ namespace MaintenanceTracker.Controllers
 		[HttpGet]
 		public async Task<IEnumerable<Make>> GetMakes()
 		{
-			return await _edmundsRepository.GetAllMakes();
+			return await _edmundsRepository.GetMakes();
 		}
 	}
 }

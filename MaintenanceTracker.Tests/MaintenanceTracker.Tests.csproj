@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EdmundsApiSDK, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdmundsApiSDK.0.0.1.0\lib\net452\EdmundsApiSDK.dll</HintPath>
+    <Reference Include="EdmundsApiSDK, Version=0.1.5817.36858, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdmundsApiSDK.0.1.5817.36858\lib\net452\EdmundsApiSDK.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -84,7 +84,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
