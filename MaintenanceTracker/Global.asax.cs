@@ -15,7 +15,7 @@ namespace MaintenanceTracker
 			UnityConfig.RegisterComponents();
 
 			// Added because Visual Studio told me to after I added an MVC5 controller.
-			AreaRegistration.RegisterAllAreas();
+			//AreaRegistration.RegisterAllAreas();
 			RouteConfig.RegisterRoutes( RouteTable.Routes );
 			FilterConfig.RegisterGlobalFilters( GlobalFilters.Filters );
 			BundleConfig.RegisterBundles( BundleTable.Bundles );
