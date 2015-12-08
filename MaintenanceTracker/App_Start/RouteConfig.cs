@@ -11,7 +11,7 @@ namespace MaintenanceTracker
 
 			routes.MapRoute(
 				name: "Default",
-				url: "",
+				url: "{*anything}",
 				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
 			);
 		}
