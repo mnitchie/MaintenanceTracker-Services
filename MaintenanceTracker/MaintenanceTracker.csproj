@@ -47,7 +47,7 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="EdmundsApiSDK">
-      <HintPath>..\packages\EdmundsApiSDK.0.1.5817.39229\lib\net452\EdmundsApiSDK.dll</HintPath>
+      <HintPath>..\packages\EdmundsApiSDK.0.1.5821.2829\lib\net452\EdmundsApiSDK.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -160,6 +160,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CarMakeController.cs" />
+    <Compile Include="Controllers\CarModelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

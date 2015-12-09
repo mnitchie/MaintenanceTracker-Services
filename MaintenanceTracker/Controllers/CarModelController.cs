@@ -5,20 +5,19 @@ using System.Web.Http;
 
 namespace MaintenanceTracker.Controllers
 {
-	public class CarMakeController : ApiController
+	public class CarModelController : ApiController
 	{
-
 		private IEdmunds _edmundsRepository;
 
-		public CarMakeController(IEdmunds edmundsRepository)
+		public CarModelController( IEdmunds edmundsRepository )
 		{
 			this._edmundsRepository = edmundsRepository;
 		}
 
 		[HttpGet]
-		public async Task<IEnumerable<Make>> GetMakes([FromUri] string year = null)
+		public async Task<IEnumerable<Model>> GetModels( [FromUri] string make, [FromUri] string year = null )
 		{
-			return await _edmundsRepository.GetMakes( year );
+			return await _edmundsRepository.GetModelsByMake( make, year );
 		}
 	}
 }

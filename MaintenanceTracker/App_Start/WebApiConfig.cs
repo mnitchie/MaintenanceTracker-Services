@@ -22,6 +22,12 @@ namespace MaintenanceTracker
 				routeTemplate: "api/carMakes",
 				defaults: new { controller = "CarMake"}
 			);
+
+			config.Routes.MapHttpRoute(
+				name: "CarModel",
+				routeTemplate: "api/carModels",
+				defaults: new { controller = "CarModel" }
+			);
 		}
 	}
 }

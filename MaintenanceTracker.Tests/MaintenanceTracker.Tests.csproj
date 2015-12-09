@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EdmundsApiSDK">
-      <HintPath>..\packages\EdmundsApiSDK.0.1.5817.39229\lib\net452\EdmundsApiSDK.dll</HintPath>
+      <HintPath>..\packages\EdmundsApiSDK.0.1.5821.2829\lib\net452\EdmundsApiSDK.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
