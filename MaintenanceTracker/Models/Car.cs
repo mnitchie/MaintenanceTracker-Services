@@ -5,7 +5,7 @@ namespace MaintenanceTracker.Models
 {
 	public class Car
 	{
-		public Guid? Id { get; set; }
+		public Guid Id { get; set; }
 
 		[Required]
 		public string Year { get; set; }
