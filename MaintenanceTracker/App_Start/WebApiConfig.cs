@@ -31,7 +31,7 @@ namespace MaintenanceTracker
 
 			config.Routes.MapHttpRoute(
 				name: "Car",
-				routeTemplate: "api/carModels/{id}",
+				routeTemplate: "api/cars/{id}",
 				defaults: new { controller = "Car", id = RouteParameter.Optional }
 			);
 		}
