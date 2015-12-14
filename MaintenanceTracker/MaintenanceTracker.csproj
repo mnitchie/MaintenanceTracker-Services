@@ -171,10 +171,11 @@
     <Compile Include="Controllers\CarMakeController.cs" />
     <Compile Include="Controllers\CarModelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DataModels\MaintenanceTrackerContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Car.cs" />
+    <Compile Include="Classes\Car.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
