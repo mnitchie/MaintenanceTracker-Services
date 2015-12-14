@@ -1,4 +1,4 @@
-﻿using MaintenanceTracker.Models;
+﻿using MaintenanceTracker.Classes;
 using System;
 using System.Web.Http;
 namespace MaintenanceTracker.Controllers

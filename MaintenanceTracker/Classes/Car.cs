@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace MaintenanceTracker.Models
+namespace MaintenanceTracker.Classes
 {
 	public class Car
 	{
