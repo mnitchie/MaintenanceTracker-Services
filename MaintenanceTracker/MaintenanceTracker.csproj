@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Controllers\CarMakeController.cs" />
     <Compile Include="Controllers\CarModelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
