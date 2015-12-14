@@ -1,131 +1,134 @@
-﻿using MaintenanceTracker.Models;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using MaintenanceTracker.Models;
 
 namespace MaintenanceTracker.Controllers
 {
-	public class CarsController : ApiController
-	{
-		private MaintenanceTrackerContext db = new MaintenanceTrackerContext();
+    public class CarsController : ApiController
+    {
+        private MaintenanceTrackerContext db = new MaintenanceTrackerContext();
 
-		// GET: api/Cars
-		public IQueryable<Car> GetCars()
-		{
-			return db.Cars;
-		}
+        // GET: api/Cars
+        public IQueryable<Car> GetCars()
+        {
+            return db.Cars;
+        }
 
-		// GET: api/Cars/5
-		[ResponseType(typeof(Car))]
-		public async Task<IHttpActionResult> GetCar(Guid id)
-		{
-			Car car = await db.Cars.FindAsync(id);
-			if (car == null)
-			{
-				return NotFound();
-			}
+        // GET: api/Cars/5
+        [ResponseType(typeof(Car))]
+        public async Task<IHttpActionResult> GetCar(Guid id)
+        {
+            Car car = await db.Cars.FindAsync(id);
+            if (car == null)
+            {
+                return NotFound();
+            }
 
-			return Ok(car);
-		}
+            return Ok(car);
+        }
 
-		// PUT: api/Cars/5
-		[ResponseType(typeof(void))]
-		public async Task<IHttpActionResult> PutCar(Guid id, Car car)
-		{
-			if (!ModelState.IsValid)
-			{
-				return BadRequest(ModelState);
-			}
+        // PUT: api/Cars/5
+        [ResponseType(typeof(void))]
+        public async Task<IHttpActionResult> PutCar(Guid id, Car car)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-			if (id != car.Id)
-			{
-				return BadRequest();
-			}
+            if (id != car.Id)
+            {
+                return BadRequest();
+            }
 
-			db.Entry(car).State = EntityState.Modified;
+            db.Entry(car).State = EntityState.Modified;
 
-			try
-			{
-				await db.SaveChangesAsync();
-			}
-			catch (DbUpdateConcurrencyException)
-			{
-				if (!CarExists(id))
-				{
-					return NotFound();
-				}
-				else
-				{
-					throw;
-				}
-			}
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CarExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-			return StatusCode(HttpStatusCode.NoContent);
-		}
+            return StatusCode(HttpStatusCode.NoContent);
+        }
 
-		// POST: api/Cars
-		[ResponseType(typeof(Car))]
-		public async Task<IHttpActionResult> PostCar(Car car)
-		{
-			if (!ModelState.IsValid)
-			{
-				return BadRequest(ModelState);
-			}
+        // POST: api/Cars
+        [ResponseType(typeof(Car))]
+        public async Task<IHttpActionResult> PostCar(Car car)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-			db.Cars.Add(car);
+            db.Cars.Add(car);
 
-			try
-			{
-				await db.SaveChangesAsync();
-			}
-			catch (DbUpdateException)
-			{
-				if (CarExists(car.Id))
-				{
-					return Conflict();
-				}
-				else
-				{
-					throw;
-				}
-			}
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (CarExists(car.Id))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-			return CreatedAtRoute("DefaultApi", new { id = car.Id }, car);
-		}
+            return CreatedAtRoute("DefaultApi", new { id = car.Id }, car);
+        }
 
-		// DELETE: api/Cars/5
-		[ResponseType(typeof(Car))]
-		public async Task<IHttpActionResult> DeleteCar(Guid id)
-		{
-			Car car = await db.Cars.FindAsync(id);
-			if (car == null)
-			{
-				return NotFound();
-			}
+        // DELETE: api/Cars/5
+        [ResponseType(typeof(Car))]
+        public async Task<IHttpActionResult> DeleteCar(Guid id)
+        {
+            Car car = await db.Cars.FindAsync(id);
+            if (car == null)
+            {
+                return NotFound();
+            }
 
-			db.Cars.Remove(car);
-			await db.SaveChangesAsync();
+            db.Cars.Remove(car);
+            await db.SaveChangesAsync();
 
-			return Ok(car);
-		}
+            return Ok(car);
+        }
 
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing)
-			{
-				db.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		private bool CarExists(Guid id)
-		{
-			return db.Cars.Count(e => e.Id == id) > 0;
-		}
-	}
+        private bool CarExists(Guid id)
+        {
+            return db.Cars.Count(e => e.Id == id) > 0;
+        }
+    }
 }
