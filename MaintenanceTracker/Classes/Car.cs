@@ -1,8 +1,11 @@
-﻿namespace MaintenanceTracker.Classes
+﻿
+using System;
+
+namespace MaintenanceTracker.Classes
 {
 	public class Car
 	{
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 		public string Year { get; set; }
 	}
 }
