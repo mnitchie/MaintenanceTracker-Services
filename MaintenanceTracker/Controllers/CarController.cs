@@ -1,6 +1,5 @@
 ﻿using MaintenanceTracker.Classes;
 using MaintenanceTracker.Repositories;
-using System;
 using System.Web.Http;
 namespace MaintenanceTracker.Controllers
 {
@@ -15,7 +14,6 @@ namespace MaintenanceTracker.Controllers
 				Year = "1994"
 			};
 			repo.CreateCar( car );
-			Console.WriteLine( car.Id );
 			return Ok(car);
 		}
 
