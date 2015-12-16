@@ -3,7 +3,7 @@ namespace MaintenanceTracker.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -11,7 +11,7 @@ namespace MaintenanceTracker.Migrations
                 "dbo.Cars",
                 c => new
                     {
-                        Id = c.Guid(nullable: false),
+                        Id = c.Long(nullable: false, identity: true),
                         Year = c.String(),
                     })
                 .PrimaryKey(t => t.Id);

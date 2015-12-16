@@ -176,9 +176,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Classes\Car.cs" />
-    <Compile Include="Migrations\201512140343289_Initial.cs" />
-    <Compile Include="Migrations\201512140343289_Initial.Designer.cs">
-      <DependentUpon>201512140343289_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201512160035462_initial.cs" />
+    <Compile Include="Migrations\201512160035462_initial.Designer.cs">
+      <DependentUpon>201512160035462_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -202,8 +202,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201512140343289_Initial.resx">
-      <DependentUpon>201512140343289_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512160035462_initial.resx">
+      <DependentUpon>201512160035462_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

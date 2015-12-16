@@ -7,7 +7,7 @@ namespace MaintenanceTracker.Controllers
 	public class CarController : ApiController
 	{
 		[HttpGet]
-		public IHttpActionResult GetCar([FromUri] Guid id)
+		public IHttpActionResult GetCar([FromUri] long id)
 		{
 			var repo = new MaintenanceTrackerRepo();
 
