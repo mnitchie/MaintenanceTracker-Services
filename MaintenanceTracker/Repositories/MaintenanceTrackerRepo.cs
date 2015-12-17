@@ -9,7 +9,11 @@ namespace MaintenanceTracker.Repositories
 		{
 			using ( var context = new MaintenanceTrackerContext() )
 			{
-				context.Cars.Add( car );
+				var newCar = new Car {
+					Year = car.Year,
+
+				};
+				//context.Cars.Add( car );
 				context.SaveChanges();
 			}
 		}

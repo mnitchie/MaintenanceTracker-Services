@@ -13,7 +13,7 @@ namespace MaintenanceTracker.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201512160035462_initial"; }
+            get { return "201512160418387_initial"; }
         }
         
         string IMigrationMetadata.Source

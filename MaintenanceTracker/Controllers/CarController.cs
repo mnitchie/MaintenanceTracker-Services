@@ -1,4 +1,5 @@
 ﻿using MaintenanceTracker.Classes;
+using MaintenanceTracker.Classes.DTO;
 using MaintenanceTracker.Repositories;
 using System.Web.Http;
 namespace MaintenanceTracker.Controllers
@@ -11,14 +12,15 @@ namespace MaintenanceTracker.Controllers
 			var repo = new MaintenanceTrackerRepo();
 
 			var car = new Car {
-				Year = "1994"
+				Year = "1994",
+				
 			};
 			repo.CreateCar( car );
 			return Ok(car);
 		}
 
 		[HttpPost]
-		public IHttpActionResult CreateCar(Car car)
+		public IHttpActionResult CreateCar(CarDTO car)
 		{
 			return Ok(car);
 		}
