@@ -1,4 +1,4 @@
-﻿namespace MaintenanceTracker.Classes.DTO
+﻿namespace MaintenanceTracker.Models.DTO
 {
 	public class CarDTO
 	{

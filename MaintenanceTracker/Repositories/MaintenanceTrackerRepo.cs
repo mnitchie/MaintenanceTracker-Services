@@ -1,4 +1,4 @@
-﻿using MaintenanceTracker.Classes;
+﻿using MaintenanceTracker.Models;
 using MaintenanceTracker.DataModels;
 
 namespace MaintenanceTracker.Repositories

@@ -1,4 +1,4 @@
-﻿using MaintenanceTracker.Classes;
+﻿using MaintenanceTracker.Models;
 using System.Data.Entity;
 
 namespace MaintenanceTracker.DataModels

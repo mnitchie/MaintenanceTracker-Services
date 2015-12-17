@@ -167,18 +167,22 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Classes\Car.cs" />
-    <Compile Include="Classes\CarMake.cs" />
-    <Compile Include="Classes\CarModel.cs" />
+    <Compile Include="Models\Car.cs" />
+    <Compile Include="Classes\CarCreator.cs" />
+    <Compile Include="Models\CarMake.cs" />
+    <Compile Include="Models\CarModel.cs" />
+    <Compile Include="Models\DTO\SideLoadingCarDTO.cs" />
+    <Compile Include="Classes\ICarCreator.cs" />
     <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Controllers\CarMakeController.cs" />
     <Compile Include="Controllers\CarModelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Classes\Converters\CarConverter.cs" />
     <Compile Include="DataModels\MaintenanceTrackerContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Classes\DTO\CarDTO.cs" />
+    <Compile Include="Models\DTO\CarDTO.cs" />
     <Compile Include="Migrations\201512160418387_initial.cs" />
     <Compile Include="Migrations\201512160418387_initial.Designer.cs">
       <DependentUpon>201512160418387_initial.cs</DependentUpon>

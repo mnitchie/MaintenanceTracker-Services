@@ -1,5 +1,5 @@
-﻿using MaintenanceTracker.Classes;
-using MaintenanceTracker.Classes.DTO;
+﻿using MaintenanceTracker.Models;
+using MaintenanceTracker.Models.DTO;
 using MaintenanceTracker.Repositories;
 using System.Web.Http;
 namespace MaintenanceTracker.Controllers
@@ -22,6 +22,11 @@ namespace MaintenanceTracker.Controllers
 		[HttpPost]
 		public IHttpActionResult CreateCar(CarDTO car)
 		{
+			// Create a full "Car" object from CarDTO
+			// Save it to the DB
+			// The "Car" now has an ID
+			// Convert it to a sideloading car DTO
+			// Return it
 			return Ok(car);
 		}
 	}

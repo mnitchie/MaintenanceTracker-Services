@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MaintenanceTracker.Classes
+namespace MaintenanceTracker.Models
 {
-	public class CarMake
+	public class CarModel
 	{
 		[Key]
 		public string NiceName { get; set; }
