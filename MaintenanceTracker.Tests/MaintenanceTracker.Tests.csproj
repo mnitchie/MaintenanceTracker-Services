@@ -32,8 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EdmundsApiSDK">
-      <HintPath>..\packages\EdmundsApiSDK.0.1.5821.2829\lib\net452\EdmundsApiSDK.dll</HintPath>
+    <Reference Include="EdmundsApiSDK, Version=0.1.5829.41247, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdmundsApiSDK.0.1.5829.41247\lib\net452\EdmundsApiSDK.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />

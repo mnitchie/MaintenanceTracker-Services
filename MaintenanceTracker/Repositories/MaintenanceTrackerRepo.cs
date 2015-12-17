@@ -1,19 +1,15 @@
-﻿using MaintenanceTracker.Models;
-using MaintenanceTracker.DataModels;
+﻿using MaintenanceTracker.DataModels;
+using MaintenanceTracker.Models;
 
 namespace MaintenanceTracker.Repositories
 {
-	public class MaintenanceTrackerRepo
+	public class MaintenanceTrackerRepository : IMaintenanceTrackerRepository
 	{
 		public void CreateCar(Car car)
 		{
 			using ( var context = new MaintenanceTrackerContext() )
 			{
-				var newCar = new Car {
-					Year = car.Year,
-
-				};
-				//context.Cars.Add( car );
+				context.Cars.Add( car );
 				context.SaveChanges();
 			}
 		}
