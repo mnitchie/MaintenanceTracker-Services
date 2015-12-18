@@ -1,8 +1,8 @@
 ﻿using EdmundsApiSDK;
+using MaintenanceTracker.Classes.Converters;
 using MaintenanceTracker.Models;
 using MaintenanceTracker.Models.DTO;
 using MaintenanceTracker.Repositories;
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -13,32 +13,33 @@ namespace MaintenanceTracker.Controllers
 	{
 		private IEdmunds _edmundsRepository;
 		private IMaintenanceTrackerRepository _maintenanceTrackerRepository;
+		private CarConverter _carConverter;
 
 		public CarController(IEdmunds edmundsRepository, IMaintenanceTrackerRepository maintenanceTrackerRepository)
 		{
 			_edmundsRepository = edmundsRepository;
 			_maintenanceTrackerRepository = maintenanceTrackerRepository;
+			_carConverter = new CarConverter();
 		}
-
 
 		[HttpGet]
 		public IHttpActionResult GetCars()
 		{
 			var cars = _maintenanceTrackerRepository.FindAllCars();
-			return Ok( cars );
+			return Ok( _carConverter.Convert( cars ) );
 		}
 
 		[HttpGet]
 		public IHttpActionResult GetCar([FromUri] long id)
 		{
+			var car = _maintenanceTrackerRepository.FindById( id );
 
-			//var car = new Car {
-			//	Year = "1994",
+			if (car == null)
+			{
+				return NotFound();
+			}
 
-			//};
-			////repo.CreateCar( car );
-			//return Ok(car);
-			throw new NotImplementedException();
+			return Ok( _carConverter.Convert( car ) );
 		}
 
 		[HttpPost]
@@ -64,6 +65,7 @@ namespace MaintenanceTracker.Controllers
 			car = _maintenanceTrackerRepository.CreateCar( car );
 			
 			carDto.Id = car.Id;
+			
 			return Ok(carDto);
 		}
 	}

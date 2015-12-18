@@ -15,6 +15,14 @@ namespace MaintenanceTracker.Repositories
 			}
 		}
 
+		public Car FindById(long id)
+		{
+			using (var context = new MaintenanceTrackerContext())
+			{
+				return context.Cars.Include("Make").Include("Model").SingleOrDefault(c => c.Id == id);
+			}
+		}
+
 		public Car CreateCar(Car car)
 		{
 			using ( var context = new MaintenanceTrackerContext() )
