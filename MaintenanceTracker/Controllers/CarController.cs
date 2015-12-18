@@ -2,6 +2,7 @@
 using MaintenanceTracker.Models;
 using MaintenanceTracker.Models.DTO;
 using MaintenanceTracker.Repositories;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -19,16 +20,25 @@ namespace MaintenanceTracker.Controllers
 			_maintenanceTrackerRepository = maintenanceTrackerRepository;
 		}
 
+
+		[HttpGet]
+		public IHttpActionResult GetCars()
+		{
+			var cars = _maintenanceTrackerRepository.FindAllCars();
+			return Ok( cars );
+		}
+
 		[HttpGet]
 		public IHttpActionResult GetCar([FromUri] long id)
 		{
 
-			var car = new Car {
-				Year = "1994",
-				
-			};
-			//repo.CreateCar( car );
-			return Ok(car);
+			//var car = new Car {
+			//	Year = "1994",
+
+			//};
+			////repo.CreateCar( car );
+			//return Ok(car);
+			throw new NotImplementedException();
 		}
 
 		[HttpPost]
