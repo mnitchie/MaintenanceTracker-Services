@@ -168,10 +168,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Migrations\201512181841101_initial.cs" />
+    <Compile Include="Migrations\201512181841101_initial.Designer.cs">
+      <DependentUpon>201512181841101_initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\CarMake.cs" />
     <Compile Include="Models\CarModel.cs" />
-    <Compile Include="Models\DTO\SideLoadingCarDTO.cs" />
     <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Controllers\CarMakeController.cs" />
     <Compile Include="Controllers\CarModelController.cs" />
@@ -182,10 +185,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DTO\CarDTO.cs" />
-    <Compile Include="Migrations\201512160418387_initial.cs" />
-    <Compile Include="Migrations\201512160418387_initial.Designer.cs">
-      <DependentUpon>201512160418387_initial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IMaintenanceTrackerRepository.cs" />
@@ -209,8 +208,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201512160418387_initial.resx">
-      <DependentUpon>201512160418387_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512181841101_initial.resx">
+      <DependentUpon>201512181841101_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

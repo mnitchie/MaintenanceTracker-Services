@@ -8,10 +8,10 @@ namespace MaintenanceTracker.Models
 		[Required]
 		public string Year { get; set; }
 		[Required]
-		public string CarMakeNiceName { get; set; }
+		public string CarMakeId { get; set; }
 		public CarMake Make { get; set; }
 		[Required]
-		public string CarModelNiceName { get; set; }
+		public string CarModelId { get; set; }
 		public CarModel Model { get; set; }
 	}
 }

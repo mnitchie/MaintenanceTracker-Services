@@ -3,8 +3,6 @@ using MaintenanceTracker.Classes.Converters;
 using MaintenanceTracker.Models;
 using MaintenanceTracker.Models.DTO;
 using MaintenanceTracker.Repositories;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace MaintenanceTracker.Controllers
@@ -43,22 +41,20 @@ namespace MaintenanceTracker.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IHttpActionResult> CreateCar(CarDTO carDto)
+		public IHttpActionResult CreateCar(CarDTO carDto)
 		{
-			var edmundsMake = await _edmundsRepository.GetMakeByNiceName( carDto.Make );
-			var edmundsModel = edmundsMake.models.Single( m => m.NiceName == carDto.Model );
-
+			
 			Car car = new Car {
 				Year = carDto.Year,
-				CarMakeNiceName = carDto.Make,
+				CarMakeId = carDto.Make.Id,
 				Make = new CarMake {
-					NiceName = edmundsMake.NiceName,
-					Name = edmundsMake.Name
+					Id = carDto.Make.Id,
+					Name = carDto.Make.Name
 				},
-				CarModelNiceName = carDto.Model,
+				CarModelId = carDto.Model.Id,
 				Model = new CarModel {
-					NiceName = edmundsModel.NiceName,
-					Name = edmundsModel.Name
+					Id = carDto.Model.Id,
+					Name = carDto.Model.Name
 				}
 			};
 

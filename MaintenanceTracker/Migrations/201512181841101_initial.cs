@@ -13,41 +13,41 @@ namespace MaintenanceTracker.Migrations
                     {
                         Id = c.Long(nullable: false, identity: true),
                         Year = c.String(nullable: false),
-                        CarMakeNiceName = c.String(nullable: false, maxLength: 128),
-                        CarModelNiceName = c.String(nullable: false, maxLength: 128),
+                        CarMakeId = c.String(nullable: false, maxLength: 128),
+                        CarModelId = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.CarMakes", t => t.CarMakeNiceName, cascadeDelete: true)
-                .ForeignKey("dbo.CarModels", t => t.CarModelNiceName, cascadeDelete: true)
-                .Index(t => t.CarMakeNiceName)
-                .Index(t => t.CarModelNiceName);
+                .ForeignKey("dbo.CarMakes", t => t.CarMakeId, cascadeDelete: true)
+                .ForeignKey("dbo.CarModels", t => t.CarModelId, cascadeDelete: true)
+                .Index(t => t.CarMakeId)
+                .Index(t => t.CarModelId);
             
             CreateTable(
                 "dbo.CarMakes",
                 c => new
                     {
-                        NiceName = c.String(nullable: false, maxLength: 128),
+                        Id = c.String(nullable: false, maxLength: 128),
                         Name = c.String(),
                     })
-                .PrimaryKey(t => t.NiceName);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.CarModels",
                 c => new
                     {
-                        NiceName = c.String(nullable: false, maxLength: 128),
+                        Id = c.String(nullable: false, maxLength: 128),
                         Name = c.String(),
                     })
-                .PrimaryKey(t => t.NiceName);
+                .PrimaryKey(t => t.Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Cars", "CarModelNiceName", "dbo.CarModels");
-            DropForeignKey("dbo.Cars", "CarMakeNiceName", "dbo.CarMakes");
-            DropIndex("dbo.Cars", new[] { "CarModelNiceName" });
-            DropIndex("dbo.Cars", new[] { "CarMakeNiceName" });
+            DropForeignKey("dbo.Cars", "CarModelId", "dbo.CarModels");
+            DropForeignKey("dbo.Cars", "CarMakeId", "dbo.CarMakes");
+            DropIndex("dbo.Cars", new[] { "CarModelId" });
+            DropIndex("dbo.Cars", new[] { "CarMakeId" });
             DropTable("dbo.CarModels");
             DropTable("dbo.CarMakes");
             DropTable("dbo.Cars");

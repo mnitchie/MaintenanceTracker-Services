@@ -1,5 +1,6 @@
 ﻿using EdmundsApiSDK;
-using System.Collections.Generic;
+using MaintenanceTracker.Models;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -15,9 +16,15 @@ namespace MaintenanceTracker.Controllers
 		}
 
 		[HttpGet]
-		public async Task<IEnumerable<Model>> GetModels( [FromUri] string make, [FromUri] string year = null )
+		public async Task<IHttpActionResult> GetModels( [FromUri] string make, [FromUri] string year = null )
 		{
-			return await _edmundsRepository.GetModelsByMake( make, year );
+			var edmundsModels = await _edmundsRepository.GetModelsByMake( make, year );
+			var models = edmundsModels.Select(em => new CarModel {
+				Id = em.NiceName,
+				Name = em.Name
+			} );
+
+			return Ok( models );
 		}
 	}
 }

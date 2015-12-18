@@ -7,21 +7,17 @@ namespace MaintenanceTracker.Classes.Converters
 {
 	public class CarConverter
 	{
-		public SideLoadingCarDTO Convert(Car car)
+		public CarDTO Convert(Car car)
 		{
-			return new SideLoadingCarDTO {
-				Car = new CarDTO {
-					Id = car.Id,
-					Year = car.Year,
-					Make = car.CarMakeNiceName,
-					Model = car.CarModelNiceName,
-				},
+			return new CarDTO {
+				Id = car.Id,
+				Year = car.Year,
 				Make = car.Make,
 				Model = car.Model
 			};
 		}
 
-		public IEnumerable<SideLoadingCarDTO> Convert(IEnumerable<Car> cars)
+		public IEnumerable<CarDTO> Convert(IEnumerable<Car> cars)
 		{
 			return cars.Select( c => Convert( c ) );
 		}

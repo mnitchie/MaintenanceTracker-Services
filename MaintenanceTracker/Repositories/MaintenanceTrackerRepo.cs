@@ -27,12 +27,12 @@ namespace MaintenanceTracker.Repositories
 		{
 			using ( var context = new MaintenanceTrackerContext() )
 			{
-				if ( context.Makes.Find( car.CarMakeNiceName ) != null )
+				if ( context.Makes.Find( car.CarMakeId ) != null )
 				{
 					car.Make = null;
 				}
 
-				if ( context.Models.Find( car.CarModelNiceName ) != null )
+				if ( context.Models.Find( car.CarModelId ) != null )
 				{
 					car.Model = null;
 				}
