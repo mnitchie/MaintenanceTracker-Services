@@ -5,7 +5,7 @@ namespace MaintenanceTracker.Repositories
 {
 	public interface IMaintenanceTrackerRepository
 	{
-		void CreateCar( Car car );
+		Car CreateCar( Car car );
 		IEnumerable<Car> FindAllCars();
 	}
 }

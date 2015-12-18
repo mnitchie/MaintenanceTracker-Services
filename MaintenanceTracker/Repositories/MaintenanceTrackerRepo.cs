@@ -15,13 +15,13 @@ namespace MaintenanceTracker.Repositories
 			}
 		}
 
-		public void CreateCar(Car car)
+		public Car CreateCar(Car car)
 		{
 			using ( var context = new MaintenanceTrackerContext() )
 			{
 				if ( context.Makes.Find( car.CarMakeNiceName ) != null )
 				{
-					car.Make = null; // this feels icky. side effects...
+					car.Make = null;
 				}
 
 				if ( context.Models.Find( car.CarModelNiceName ) != null )
@@ -30,6 +30,7 @@ namespace MaintenanceTracker.Repositories
 				}
 				context.Cars.Add( car );
 				context.SaveChanges();
+				return car;
 			}
 		}
 	}

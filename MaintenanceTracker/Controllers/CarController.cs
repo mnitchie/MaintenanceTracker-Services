@@ -61,17 +61,8 @@ namespace MaintenanceTracker.Controllers
 				}
 			};
 
-			_maintenanceTrackerRepository.CreateCar( car );
-
-			//Car car = new Car {
-			//	Year = car
-			//}
-			// Create a full "Car" object from CarDTO
-			// Save it to the DB
-			// The "Car" now has an ID
-			// Convert it to a sideloading car DTO
-			// Return it
-
+			car = _maintenanceTrackerRepository.CreateCar( car );
+			
 			carDto.Id = car.Id;
 			return Ok(carDto);
 		}
