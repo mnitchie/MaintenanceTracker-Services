@@ -172,6 +172,10 @@
     <Compile Include="Migrations\201512181841101_initial.Designer.cs">
       <DependentUpon>201512181841101_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512202128083_addnameandvintocar.cs" />
+    <Compile Include="Migrations\201512202128083_addnameandvintocar.Designer.cs">
+      <DependentUpon>201512202128083_addnameandvintocar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\CarMake.cs" />
     <Compile Include="Models\CarModel.cs" />
@@ -210,6 +214,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201512181841101_initial.resx">
       <DependentUpon>201512181841101_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512202128083_addnameandvintocar.resx">
+      <DependentUpon>201512202128083_addnameandvintocar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

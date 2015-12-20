@@ -13,7 +13,9 @@ namespace MaintenanceTracker.Classes.Converters
 				Id = car.Id,
 				Year = car.Year,
 				Make = car.Make,
-				Model = car.Model
+				Model = car.Model,
+				Name = car.Name,
+				Vin = car.Vin
 			};
 		}
 

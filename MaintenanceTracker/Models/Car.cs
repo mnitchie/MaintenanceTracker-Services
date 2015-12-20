@@ -7,6 +7,8 @@ namespace MaintenanceTracker.Models
 		public long Id { get; set; }
 		[Required]
 		public string Year { get; set; }
+		public string Name { get; set; }
+		public string Vin { get; set; }
 		[Required]
 		public string CarMakeId { get; set; }
 		public CarMake Make { get; set; }

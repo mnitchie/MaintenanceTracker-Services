@@ -48,6 +48,7 @@ namespace MaintenanceTracker.Repositories
 			{
 				var car = context.Cars.SingleOrDefault( c => c.Id == id );
 				context.Cars.Remove( car );
+				context.SaveChanges();
 			}
 		}
 	}
