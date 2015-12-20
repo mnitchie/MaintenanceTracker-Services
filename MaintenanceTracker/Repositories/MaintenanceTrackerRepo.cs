@@ -41,5 +41,14 @@ namespace MaintenanceTracker.Repositories
 				return car;
 			}
 		}
+
+		public void DeleteCar( long id )
+		{
+			using (var context = new MaintenanceTrackerContext())
+			{
+				var car = context.Cars.SingleOrDefault( c => c.Id == id );
+				context.Cars.Remove( car );
+			}
+		}
 	}
 }

@@ -64,5 +64,12 @@ namespace MaintenanceTracker.Controllers
 			
 			return Ok(carDto);
 		}
+
+		[HttpPost]
+		public IHttpActionResult DeleteCar([FromUri] long id )
+		{
+			_maintenanceTrackerRepository.DeleteCar( id );
+			return Ok();
+		}
 	}
 }
