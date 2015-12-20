@@ -42,6 +42,17 @@ namespace MaintenanceTracker.Repositories
 			}
 		}
 
+		public Car UpdateCar(Car car)
+		{
+			using (var context = new MaintenanceTrackerContext())
+			{
+				context.Cars.Attach( car );
+				context.Entry( car ).State = System.Data.Entity.EntityState.Modified;
+				context.SaveChanges();
+				return car;
+			}
+		}
+
 		public void DeleteCar( long id )
 		{
 			using (var context = new MaintenanceTrackerContext())

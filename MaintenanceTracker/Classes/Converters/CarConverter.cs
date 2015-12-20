@@ -23,5 +23,30 @@ namespace MaintenanceTracker.Classes.Converters
 		{
 			return cars.Select( c => Convert( c ) );
 		}
+
+		public Car Convert(CarDTO car)
+		{
+			return new Car {
+				Id = car.Id,
+				Year = car.Year,
+				CarMakeId = car.Make.Id,
+				Make = new CarMake {
+					Id = car.Make.Id,
+					Name = car.Make.Name
+				},
+				CarModelId = car.Model.Id,
+				Model = new CarModel {
+					Id = car.Model.Id,
+					Name = car.Model.Name
+				},
+				Name = car.Name,
+				Vin = car.Vin
+			};
+		}
+
+		public IEnumerable<Car> Convert(IEnumerable<CarDTO> cars)
+		{
+			return cars.Select( c => Convert( c ) );
+		}
 	}
 }

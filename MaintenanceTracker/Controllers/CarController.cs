@@ -43,26 +43,21 @@ namespace MaintenanceTracker.Controllers
 		[HttpPost]
 		public IHttpActionResult CreateCar(CarDTO carDto)
 		{
-			
-			Car car = new Car {
-				Year = carDto.Year,
-				CarMakeId = carDto.Make.Id,
-				Make = new CarMake {
-					Id = carDto.Make.Id,
-					Name = carDto.Make.Name
-				},
-				CarModelId = carDto.Model.Id,
-				Model = new CarModel {
-					Id = carDto.Model.Id,
-					Name = carDto.Model.Name
-				}
-			};
+			Car car = _carConverter.Convert( carDto );
 
 			car = _maintenanceTrackerRepository.CreateCar( car );
 			
 			carDto.Id = car.Id;
 			
 			return Ok(carDto);
+		}
+
+		[HttpPut]
+		public IHttpActionResult UpdateCar(CarDTO carDto)
+		{
+			Car car = _carConverter.Convert( carDto );
+			_maintenanceTrackerRepository.UpdateCar( car );
+			return Ok( carDto );
 		}
 
 		[HttpDelete]

@@ -8,6 +8,7 @@ namespace MaintenanceTracker.Repositories
 		IEnumerable<Car> FindAllCars();
 		Car FindById( long id );
 		Car CreateCar( Car car );
+		Car UpdateCar( Car car );
 		void DeleteCar( long id );
 	}
 }
