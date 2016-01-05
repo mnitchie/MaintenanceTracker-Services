@@ -1,4 +1,4 @@
-<img src="http://tc.mikenitchie.com/app/rest/builds/buildType:(id:MaintenanceTrackerServices_BuildServices)/statusIcon">
+<img src="http://tc.mikenitchie.com/app/rest/builds/buildType:(id:MaintenanceTracker_BuildMaintenanceTrackerServices)/statusIcon">
 
 Corresponding front-end application found [here](https://github.com/mnitchie/MaintenanceTracker)
 
