@@ -159,8 +159,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="node_modules\maintenance-tracker\dist\assets\*.css" />
+    <Content Include="node_modules\maintenance-tracker\dist\assets\*.js" />
+    <Content Include="node_modules\maintenance-tracker\dist\fonts\*.eot" />
+    <Content Include="node_modules\maintenance-tracker\dist\fonts\*.svg" />
+    <Content Include="node_modules\maintenance-tracker\dist\fonts\*.ttf" />
+    <Content Include="node_modules\maintenance-tracker\dist\fonts\*.woff" />
+    <Content Include="node_modules\maintenance-tracker\dist\fonts\*.woff2" />
+    <Content Include="node_modules\maintenance-tracker\dist\images\*.*" />
     <Content Include="package.json" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -201,13 +211,16 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\web.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\maintenanceTracker.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="WebAppSecrets.config" />
+    <Content Include="WebAppSecrets.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
