@@ -207,6 +207,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="WebAppSecrets.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
